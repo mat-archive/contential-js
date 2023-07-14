@@ -1,19 +1,23 @@
+import { getApiUrl, getKey, isClient } from './utils';
 import { ContentialApiOptions, ContentialApiStreamOptions } from './types';
+import { isSecretKey } from '../dist';
 
 export class ContentialApi {
   url: string;
-  secretKey: string;
+  key: string;
 
   constructor(options?: ContentialApiOptions) {
-    this.url =
-      options?.url ||
-      process.env.CONTENTIAL_API_URL ||
-      'https://api.contential.ai';
-    this.secretKey =
-      options?.secretKey || process.env.CONTENTIAL_SECRET_KEY || '';
+    this.url = getApiUrl(options?.url);
+    this.key = getKey(options?.key);
 
-    if (!this.secretKey) {
-      throw new Error('Missing: secretKey');
+    if (!this.key) {
+      throw new Error('Missing: key');
+    }
+
+    if (isClient() && isSecretKey(this.key)) {
+      throw new Error(
+        'Using secret key on client is not allowed. Please use publishable key instead (pk_...).',
+      );
     }
   }
 
@@ -28,7 +32,7 @@ export class ContentialApi {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${this.secretKey}`,
+          Authorization: `Bearer ${this.key}`,
         },
         body: JSON.stringify(data),
       });

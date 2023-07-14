@@ -1,9 +1,6 @@
 import { getClient } from '@contential/prompt';
 
-const client = getClient({
-  apiUrl: 'http://localhost:5000',
-  secretKey: 'sk_test_70da9aae1d2c0f289a74be4d8e248d0ae8fea914e1d0facefa',
-});
+const client = getClient();
 
 export default function Home() {
   const test = () => {
