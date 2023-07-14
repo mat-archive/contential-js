@@ -1,0 +1,21 @@
+{
+  "name": "@contential/api",
+  "version": "0.0.6-test",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rimraf dist",
+    "build": "npm-run-all clean build:main",
+    "build:main": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "eslint \"**/*.ts*\"",
+    "publish:prod": "changeset version && changeset publish"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "undici": "^5.22.1"
+  }
+}

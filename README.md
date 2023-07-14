@@ -1,1 +1,1 @@
-# contential-js
+# Contential - JavaScript

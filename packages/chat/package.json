@@ -1,0 +1,18 @@
+{
+  "name": "@contential/chat",
+  "version": "0.0.2-test",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rimraf dist",
+    "build": "npm-run-all clean build:main",
+    "build:main": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "eslint \"**/*.ts*\"",
+    "publish:prod": "changeset version && changeset publish"
+  },
+  "devDependencies": {}
+}

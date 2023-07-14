@@ -1,0 +1,45 @@
+name: Publish
+
+on:
+  push:
+    branches: [production]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Fetch main
+        run: git fetch origin main
+
+      - name: Use Node 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install pnpm
+        id: pnpm-install
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.x.x
+          run_install: false
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Affected
+        run: pnpm affected --base=origin/production~1 --exclude=apps/*
+
+      - name: Build
+        run: pnpm affected:build --base=origin/production~1 --exclude=apps/* --verbose
+
+      - name: Publish
+        run: pnpm release
