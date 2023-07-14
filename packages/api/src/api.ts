@@ -1,5 +1,4 @@
 import { ContentialApiOptions, ContentialApiStreamOptions } from './types';
-import { fetch } from 'undici';
 
 export class ContentialApi {
   url: string;
