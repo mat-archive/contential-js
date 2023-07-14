@@ -1,6 +1,5 @@
-import { getApiUrl, getKey, isClient } from './utils';
+import { getApiUrl, getKey, isClient, isSecretKey } from './utils';
 import { ContentialApiOptions, ContentialApiStreamOptions } from './types';
-import { isSecretKey } from '../dist';
 
 export class ContentialApi {
   url: string;
