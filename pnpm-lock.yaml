@@ -15,6 +15,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.26.2
+      '@types/node':
+        specifier: 20.4.2
+        version: 20.4.2
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
@@ -108,7 +111,7 @@ importers:
         version: 4.9.4
       vite:
         specifier: ^4.1.4
-        version: 4.1.4
+        version: 4.1.4(@types/node@20.4.2)
 
   packages/api:
     dependencies:
@@ -5376,7 +5379,7 @@ packages:
       solid-start: 0.2.26(@solidjs/meta@0.28.2)(@solidjs/router@0.8.2)(solid-js@1.7.2)(solid-start-node@0.2.19)(vite@4.1.4)
       terser: 5.19.0
       undici: 5.22.1
-      vite: 4.1.4
+      vite: 4.1.4(@types/node@20.4.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -5446,7 +5449,7 @@ packages:
       solid-start-node: 0.2.19(solid-start@0.2.26)(undici@5.22.1)(vite@4.1.4)
       terser: 5.19.0
       undici: 5.22.1
-      vite: 4.1.4
+      vite: 4.1.4(@types/node@20.4.2)
       vite-plugin-inspect: 0.7.33(rollup@3.26.2)(vite@4.1.4)
       vite-plugin-solid: 2.7.0(solid-js@1.7.2)(vite@4.1.4)
       wait-on: 6.0.1(debug@4.3.4)
@@ -6024,7 +6027,7 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       sirv: 2.0.3
-      vite: 4.1.4
+      vite: 4.1.4(@types/node@20.4.2)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -6042,12 +6045,12 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.7.2
       solid-refresh: 0.5.3(solid-js@1.7.2)
-      vite: 4.1.4
+      vite: 4.1.4(@types/node@20.4.2)
       vitefu: 0.2.4(vite@4.1.4)
     transitivePeerDependencies:
       - supports-color
 
-  /vite@4.1.4:
+  /vite@4.1.4(@types/node@20.4.2):
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -6072,6 +6075,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.4.2
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.2
@@ -6087,7 +6091,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.1.4
+      vite: 4.1.4(@types/node@20.4.2)
 
   /wait-on@6.0.1(debug@4.3.4):
     resolution: {integrity: sha512-zht+KASY3usTY5u2LgaNqn/Cd8MukxLGjdcZxT2ns5QzDmTFc4XoWBgC+C/na+sMRZTuVygQoMYwdcVjHnYIVw==}
