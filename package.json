@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
+    "@types/node": "20.4.2",
     "npm-run-all": "^4.1.5",
     "nx": "16.5.1",
     "rimraf": "^5.0.1",

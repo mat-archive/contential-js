@@ -1,5 +1,5 @@
 export interface ContentialApiOptions {
-  secretKey?: string;
+  key?: string;
   url?: string;
 }
 

@@ -4,7 +4,7 @@ import { getClient } from '@contential/prompt';
 const client = getClient();
 
 export async function GET({ params }: APIEvent) {
-  const result = await client.prompt({
+  await client.prompt({
     prompt: 'say hi',
     onUpdate: (data) => {
       console.log(data);
