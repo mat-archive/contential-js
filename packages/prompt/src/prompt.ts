@@ -4,7 +4,7 @@ import { PromptClientOptions, PromptOptions } from './types';
 export const getClient = (options?: PromptClientOptions) => {
   const apiClient = getApiClient({
     url: options?.apiUrl,
-    secretKey: options?.secretKey,
+    key: options?.key,
   });
 
   return {

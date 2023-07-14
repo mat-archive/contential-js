@@ -1,10 +1,10 @@
 export type PromptClientOptions = {
   apiUrl?: string;
-  secretKey?: string;
+  key?: string;
 };
 
 export type PromptConfig = {
-  secretKey: string;
+  key: string;
 };
 
 export interface PromptOptions {
