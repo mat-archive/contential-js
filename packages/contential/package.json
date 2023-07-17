@@ -1,11 +1,28 @@
 {
   "name": "contential",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "private": false,
+  "exports": {
+    ".": {
+      "default": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./chat": {
+      "default": "./dist/chat/index.js",
+      "import": "./dist/chat/index.mjs",
+      "require": "./dist/chat/index.js",
+      "types": "./dist/chat/index.d.ts"
+    },
+    "./prompt": {
+      "default": "./dist/prompt/index.js",
+      "import": "./dist/prompt/index.mjs",
+      "require": "./dist/prompt/index.js",
+      "types": "./dist/prompt/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "clean": "rimraf dist",
