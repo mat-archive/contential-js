@@ -1,5 +1,2 @@
-export const chat = () => {
-  return '@contential/chat';
-};
-
-export default chat;
+export * from './chat';
+export * from './types';

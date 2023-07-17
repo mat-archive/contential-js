@@ -1,24 +1,48 @@
-import { getClient } from '@contential/prompt';
+import { Message, getClient } from '@contential/chat';
+import { useCallback, useState } from 'react';
 
 const client = getClient();
 
 export default function Home() {
-  const test = () => {
-    client.prompt({
-      prompt: 'say hi',
-      onUpdate: ({ text }) => {
-        console.log(text);
+  const [text, setText] = useState('');
+  const [messages, setMessages] = useState<Message[]>([]);
+  const test = useCallback(() => {
+    client.chat({
+      text,
+      onUpdate: ({ messages }) => {
+        setMessages(messages);
       },
     });
-  };
+
+    setText('');
+  }, [text]);
 
   return (
-    <main className="flex w-screen h-screen items-center justify-center">
-      <div
-        className="text-4xl font-bold select-none cursor-pointer"
-        onClick={() => test()}
+    <main className="w-screen p-20">
+      <form
+        className="w-full m-auto max-w-2xl"
+        onSubmit={(event) => {
+          event.preventDefault();
+          test();
+        }}
       >
-        Test
+        <input
+          className="input input-bordered w-full"
+          type="text"
+          value={text}
+          onChange={(event) => {
+            setText(event.target.value);
+          }}
+          autoFocus
+        />
+      </form>
+
+      <div className="w-full m-auto max-w-2xl mt-20">
+        <div className="grid gap-4">
+          {messages.map((message) => (
+            <div key={message.id}>{message.text}</div>
+          ))}
+        </div>
       </div>
     </main>
   );
