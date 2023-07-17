@@ -8,6 +8,8 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([]);
   const test = useCallback(() => {
     client.chat({
+      chatSessionId: '',
+      messageUserId: '',
       text,
       onUpdate: ({ messages }) => {
         setMessages(messages);

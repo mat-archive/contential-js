@@ -1,6 +1,6 @@
 {
   "name": "contential",
-  "version": "0.0.20",
+  "version": "0.0.22",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -10,7 +10,7 @@
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:main",
-    "build:main": "tsup src/index.ts --format cjs,esm --dts",
+    "build:main": "tsup",
     "lint": "eslint \"**/*.ts*\"",
     "publish:prod": "changeset version && changeset publish"
   },
