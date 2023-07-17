@@ -76,8 +76,6 @@ export class ContentialApi {
           console.log(error);
         }
       }
-
-      return {};
     } catch (error) {
       console.log(error);
     }
