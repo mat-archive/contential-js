@@ -12,8 +12,8 @@ export const getClient = (options?: ChatClientOptions) => {
       const result = await apiClient.stream<ChatOptionsData>({
         path: '/chat',
         data: {
-          chatSessionId: 'chat_5f91a6469d83c5158645cf86b2acfbda92382dce',
-          messageUserId: 'user_123',
+          chatSessionId: options.chatSessionId,
+          messageUserId: options.messageUserId,
           text: options.text,
         },
         onUpdate: options.onUpdate,
@@ -23,5 +23,3 @@ export const getClient = (options?: ChatClientOptions) => {
     },
   };
 };
-
-export const testApi = 'testApi';

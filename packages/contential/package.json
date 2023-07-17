@@ -1,6 +1,6 @@
 {
   "name": "contential",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -15,7 +15,7 @@
     "publish:prod": "changeset version && changeset publish"
   },
   "dependencies": {
-    "@contential/chat": "0.0.4",
+    "@contential/chat": "0.0.5",
     "@contential/prompt": "0.0.13"
   }
 }

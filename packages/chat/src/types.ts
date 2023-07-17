@@ -8,6 +8,8 @@ export type ChatConfig = {
 };
 
 export interface ChatOptions {
+  chatSessionId: string;
+  messageUserId: string;
   text: string;
   onUpdate: ChatOnUpdate;
 }
