@@ -1,10 +1,15 @@
-// import { getClient } from '@contential/prompt';
+import { getClient as getChatClient } from '@contential/chat';
+import { getClient as getPromptClient } from '@contential/prompt';
 
-// const promptClient = getClient();
-// const prompt = promptClient.prompt;
+const chatClient = getChatClient();
+const chat = chatClient.chat;
+
+const promptClient = getPromptClient();
+const prompt = promptClient.prompt;
 
 export const contential = {
-  prompt: 'prompt',
+  chat,
+  prompt,
 };
 
 export default contential;

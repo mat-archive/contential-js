@@ -1,6 +1,6 @@
 {
   "name": "contential",
-  "version": "0.0.3-test",
+  "version": "0.0.16",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -14,5 +14,8 @@
     "lint": "eslint \"**/*.ts*\"",
     "publish:prod": "changeset version && changeset publish"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@contential/chat": "0.0.4",
+    "@contential/prompt": "0.0.13"
+  }
 }
