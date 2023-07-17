@@ -126,15 +126,19 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
 
-  packages/chat: {}
+  packages/chat:
+    devDependencies:
+      '@contential/api':
+        specifier: ^0.0.1-test
+        version: 0.0.1
 
   packages/contential: {}
 
   packages/prompt:
     dependencies:
       '@contential/api':
-        specifier: ^0.0.0
-        version: link:../api
+        specifier: ^0.0.1-test
+        version: 0.0.1
 
 packages:
 
@@ -1449,7 +1453,6 @@ packages:
       axios: 1.4.0
     transitivePeerDependencies:
       - debug
-    dev: false
 
   /@contential/prompt@0.0.13:
     resolution: {integrity: sha512-iMgJO6oqlpd6S+cDmNT18pAVoW+LM1R7BZ+Y58/sl92XTHINKNrvcpH55hsgPoSeO1FdV72tGtAnk65DCtGJUg==}

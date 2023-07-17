@@ -1,6 +1,6 @@
 {
   "name": "@contential/chat",
-  "version": "0.0.2-test",
+  "version": "0.0.3-test",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -14,5 +14,7 @@
     "lint": "eslint \"**/*.ts*\"",
     "publish:prod": "changeset version && changeset publish"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@contential/api": "^0.0.1-test"
+  }
 }
