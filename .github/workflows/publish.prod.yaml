@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [production]
+    branches: [main]
 
 jobs:
   publish:
@@ -38,8 +38,14 @@ jobs:
       - name: Affected
         run: pnpm affected --base=origin/production~1 --exclude=apps/*
 
-      - name: Build
-        run: pnpm affected:build --base=origin/production~1 --exclude=apps/* --verbose
+      - name: Create release pull request or publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm affected:build --base=origin/production~1 --exclude=apps/* --verbose
 
-      - name: Publish
-        run: pnpm release
+      # - name: Build
+      #   run: pnpm affected:build --base=origin/production~1 --exclude=apps/* --verbose
+
+      # - name: Publish
+      #   run: pnpm release

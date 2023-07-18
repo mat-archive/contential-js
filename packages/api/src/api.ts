@@ -1,11 +1,19 @@
 import { getApiUrl, getKey, isClient, isSecretKey } from './utils';
-import { ContentialApiOptions, ContentialApiStreamOptions } from './types';
+import type {
+  ApiGetOptions,
+  ApiOptions,
+  ApiPatchOptions,
+  ApiPostOptions,
+  ApiPutOptions,
+  ApiStreamOptions,
+} from './types';
+import axios from 'axios';
 
 export class ContentialApi {
   url: string;
   key: string;
 
-  constructor(options?: ContentialApiOptions) {
+  constructor(options?: ApiOptions) {
     this.url = getApiUrl(options?.url);
     this.key = getKey(options?.key);
 
@@ -20,11 +28,66 @@ export class ContentialApi {
     }
   }
 
+  async get<ResponseData>({ path }: ApiGetOptions) {
+    const url = `${this.url}${path}`;
+    const response = await axios<ResponseData>({
+      url,
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${this.key}`,
+      },
+    });
+
+    return response.data;
+  }
+
+  async post<ResponseData>({ path, data }: ApiPostOptions) {
+    const url = `${this.url}${path}`;
+    const response = await axios<ResponseData>({
+      url,
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${this.key}`,
+      },
+      data,
+    });
+
+    return response.data;
+  }
+
+  async put<ResponseData>({ path, data }: ApiPutOptions) {
+    const url = `${this.url}${path}`;
+    const response = await axios<ResponseData>({
+      url,
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${this.key}`,
+      },
+      data,
+    });
+
+    return response.data;
+  }
+
+  async patch<ResponseData>({ path, data }: ApiPatchOptions) {
+    const url = `${this.url}${path}`;
+    const response = await axios<ResponseData>({
+      url,
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${this.key}`,
+      },
+      data,
+    });
+
+    return response.data;
+  }
+
   async stream<ResponseData>({
     path,
     data,
     onUpdate,
-  }: ContentialApiStreamOptions<ResponseData>) {
+  }: ApiStreamOptions<ResponseData>) {
     try {
       const url = `${this.url}${path}`;
       const response = await fetch(url, {
@@ -82,6 +145,6 @@ export class ContentialApi {
   }
 }
 
-export const getClient = (options?: ContentialApiOptions) => {
+export const getClient = (options?: ApiOptions) => {
   return new ContentialApi(options);
 };
