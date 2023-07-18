@@ -37,10 +37,10 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Affected
-        run: pnpm affected --base=origin/main --exclude=apps/*
+        run: pnpm affected --base=origin/main~1 --exclude=apps/*
 
       - name: Build
-        run: pnpm affected:build --base=origin/main --exclude=apps/* --verbose
+        run: pnpm affected:build --base=origin/main~1 --exclude=apps/* --verbose
 
       - name: Create release pull request or publish
         id: changesets
