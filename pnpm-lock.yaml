@@ -44,7 +44,7 @@ importers:
         version: 0.0.6
       '@contential/prompt':
         specifier: '*'
-        version: 0.0.14
+        version: link:../../packages/prompt
       '@types/node':
         specifier: 20.4.2
         version: 20.4.2
@@ -84,7 +84,7 @@ importers:
     dependencies:
       '@contential/prompt':
         specifier: '*'
-        version: 0.0.14
+        version: link:../../packages/prompt
       '@solidjs/meta':
         specifier: ^0.28.2
         version: 0.28.2(solid-js@1.7.2)
@@ -129,7 +129,7 @@ importers:
   packages/chat:
     devDependencies:
       '@contential/api':
-        specifier: 0.0.2
+        specifier: 0.0.5
         version: link:../api
 
   packages/contential:
@@ -139,12 +139,12 @@ importers:
         version: 0.0.6
       '@contential/prompt':
         specifier: 0.0.14
-        version: 0.0.14
+        version: link:../prompt
 
   packages/prompt:
     dependencies:
       '@contential/api':
-        specifier: 0.0.2
+        specifier: 0.0.5
         version: link:../api
 
 packages:
@@ -1454,24 +1454,8 @@ packages:
       prettier: 2.8.8
     dev: true
 
-  /@contential/api@0.0.3:
-    resolution: {integrity: sha512-jYQVY+v47ThlPvwuL2OYU0Ic6MEuxx2V3MwbRnnHaac8QpbnKNoHMRe5Gsc/1I4rZNmA1kExO3tbtVGev46khQ==}
-    dependencies:
-      axios: 1.4.0
-    transitivePeerDependencies:
-      - debug
-    dev: false
-
   /@contential/chat@0.0.6:
     resolution: {integrity: sha512-Z6IPOwTLpFGfZMJOngU9Hkg2+pYcgq4ovlsYUIhhBU92du6aYttv33CGJFY4AqKlsSeN4h4kTkoy5Or+I9MBIQ==}
-    dev: false
-
-  /@contential/prompt@0.0.14:
-    resolution: {integrity: sha512-FOi7OGpAov7krIiPFbZAe+yadFhIN9xujcsR2ADEab+9qEJo7uo2inJGzrwn0WvYSgurbh4f+hO+5gRyhMyppQ==}
-    dependencies:
-      '@contential/api': 0.0.3
-    transitivePeerDependencies:
-      - debug
     dev: false
 
   /@esbuild-kit/cjs-loader@2.4.2:

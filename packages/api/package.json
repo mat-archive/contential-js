@@ -1,6 +1,6 @@
 {
   "name": "@contential/api",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -11,8 +11,7 @@
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:main",
     "build:main": "tsup src/index.ts --format cjs,esm --dts",
-    "lint": "eslint \"**/*.ts*\"",
-    "publish:prod": "changeset version && changeset publish"
+    "lint": "eslint \"**/*.ts*\""
   },
   "dependencies": {
     "axios": "^1.4.0"

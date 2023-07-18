@@ -10,6 +10,7 @@
     "affected:build": "nx affected:build",
     "publish:prod1": "nx affected --base=origin/production~1 --target=publish:prod --exclude=apps/* --verbose",
     "changeset": "changeset",
+    "version": "changeset version",
     "release": "changeset version && changeset publish"
   },
   "dependencies": {
