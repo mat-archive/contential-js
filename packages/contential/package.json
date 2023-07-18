@@ -1,6 +1,7 @@
 {
   "name": "contential",
-  "version": "0.0.24",
+  "description": "Contential",
+  "version": "0.0.25",
   "license": "MIT",
   "private": false,
   "files": [
@@ -28,11 +29,10 @@
     "clean": "rimraf dist",
     "build": "npm-run-all clean build:main",
     "build:main": "tsup",
-    "lint": "eslint \"**/*.ts*\"",
-    "publish:prod": "changeset version && changeset publish"
+    "lint": "eslint \"**/*.ts*\""
   },
   "dependencies": {
-    "@contential/chat": "0.0.6",
-    "@contential/prompt": "0.0.14"
+    "@contential/chat": "0.0.5",
+    "@contential/prompt": "0.0.15"
   }
 }

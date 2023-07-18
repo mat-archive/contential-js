@@ -19,5 +19,3 @@ export const getClient = (options?: PromptClientOptions) => {
     },
   };
 };
-
-export const testApi = 'testApi';

@@ -2,15 +2,14 @@ name: Publish
 
 on:
   push:
-    branches: [main]
+    branches: [production]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
-      pull-requests: write
+
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
@@ -37,22 +36,10 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Affected
-        run: pnpm affected --base=origin/main --exclude=apps/*
+        run: pnpm affected --base=origin/production~1 --exclude=apps/*
 
       - name: Build
-        run: pnpm affected:build --base=origin/main --exclude=apps/* --verbose
+        run: pnpm affected:build --base=origin/production~1 --exclude=apps/* --verbose
 
-      - name: Create release pull request or publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-
-      # - name: Build
-      #   run: pnpm affected:build --base=origin/production~1 --exclude=apps/* --verbose
-
-      # - name: Publish
-      #   run: pnpm release
+      - name: Publish
+        run: pnpm release
