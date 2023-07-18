@@ -1,4 +1,4 @@
-import { getClient as getApiClient } from '@contential/api';
+import { getClient as getApiClient } from '../../api';
 import { PromptClientOptions, PromptOptions } from './types';
 
 export const getClient = (options?: PromptClientOptions) => {
@@ -19,5 +19,3 @@ export const getClient = (options?: PromptClientOptions) => {
     },
   };
 };
-
-export const testApi = 'testApi';

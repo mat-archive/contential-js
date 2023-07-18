@@ -31,8 +31,5 @@
     "build:main": "tsup",
     "lint": "eslint \"**/*.ts*\""
   },
-  "dependencies": {
-    "@contential/chat": "0.0.5",
-    "@contential/prompt": "0.0.15"
-  }
+  "dependencies": {}
 }

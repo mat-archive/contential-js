@@ -1,1 +1,1 @@
-export * from '@contential/prompt';
+export * from '../../prompt';

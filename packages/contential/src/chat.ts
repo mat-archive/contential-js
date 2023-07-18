@@ -1,1 +1,1 @@
-export * from '@contential/chat';
+export * from '../../chat';
