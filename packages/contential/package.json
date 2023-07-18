@@ -3,24 +3,24 @@
   "version": "0.0.23",
   "license": "MIT",
   "private": false,
+  "files": [
+    "dist/*"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
   "exports": {
     ".": {
-      "default": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
-    "./chat": {
-      "default": "./dist/chat/index.js",
-      "import": "./dist/chat/index.mjs",
-      "require": "./dist/chat/index.js",
-      "types": "./dist/chat/index.d.ts"
-    },
-    "./prompt": {
-      "default": "./dist/prompt/index.js",
-      "import": "./dist/prompt/index.mjs",
-      "require": "./dist/prompt/index.js",
-      "types": "./dist/prompt/index.d.ts"
+    "./*.js": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
     }
   },
   "scripts": {
