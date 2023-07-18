@@ -15,6 +15,6 @@
     "publish:prod": "changeset version && changeset publish"
   },
   "devDependencies": {
-    "@contential/api": "0.0.4"
+    "@contential/api": "0.0.5"
   }
 }
