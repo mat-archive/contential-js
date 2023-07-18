@@ -1,5 +1,11 @@
 # @contential/api
 
+## 0.0.6
+
+### Patch Changes
+
+- 58e0d1b: Updated description
+
 ## 0.0.5
 
 ### Patch Changes
