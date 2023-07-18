@@ -1,7 +1,7 @@
 {
   "name": "@contential/api",
   "description": "A simple API wrapper for Contential",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

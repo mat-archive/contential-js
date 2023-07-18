@@ -1,7 +1,7 @@
 {
   "name": "@contential/prompt",
   "description": "Contential - Prompt",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -16,6 +16,6 @@
     "publish:prod": "changeset version && changeset publish"
   },
   "dependencies": {
-    "@contential/api": "0.0.5"
+    "@contential/api": "0.0.6"
   }
 }
