@@ -148,3 +148,5 @@ export class ContentialApi {
 export const getClient = (options?: ApiOptions) => {
   return new ContentialApi(options);
 };
+
+export const test = '1';
