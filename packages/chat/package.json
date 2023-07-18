@@ -14,5 +14,7 @@
     "lint": "eslint \"**/*.ts*\"",
     "publish:prod": "changeset version && changeset publish"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@contential/api": "0.0.6"
+  }
 }

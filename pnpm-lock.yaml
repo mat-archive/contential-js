@@ -126,11 +126,26 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
 
-  packages/chat: {}
+  packages/chat:
+    devDependencies:
+      '@contential/api':
+        specifier: 0.0.6
+        version: link:../api
 
-  packages/contential: {}
+  packages/contential:
+    dependencies:
+      '@contential/chat':
+        specifier: 0.0.5
+        version: link:../chat
+      '@contential/prompt':
+        specifier: 0.0.15
+        version: link:../prompt
 
-  packages/prompt: {}
+  packages/prompt:
+    dependencies:
+      '@contential/api':
+        specifier: 0.0.6
+        version: link:../api
 
 packages:
 

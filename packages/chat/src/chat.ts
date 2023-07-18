@@ -1,4 +1,4 @@
-import { getClient as getApiClient } from '../../api';
+import { getClient as getApiClient } from '@contential/api';
 import { ChatClientOptions, ChatOptions, ChatOptionsData } from './types';
 
 export const getClient = (options?: ChatClientOptions) => {
