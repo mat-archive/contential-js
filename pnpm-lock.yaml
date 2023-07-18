@@ -129,7 +129,7 @@ importers:
   packages/chat:
     devDependencies:
       '@contential/api':
-        specifier: 0.0.2
+        specifier: 0.0.4
         version: link:../api
 
   packages/contential:
@@ -144,7 +144,7 @@ importers:
   packages/prompt:
     dependencies:
       '@contential/api':
-        specifier: 0.0.2
+        specifier: 0.0.4
         version: link:../api
 
 packages:
