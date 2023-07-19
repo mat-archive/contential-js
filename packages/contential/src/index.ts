@@ -1,1 +1,1 @@
-export * from './contential';
+export * from './lib/contential';

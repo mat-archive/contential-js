@@ -2,28 +2,37 @@
   "name": "contential-js",
   "version": "0.0.0",
   "license": "MIT",
-  "private": true,
   "scripts": {
-    "dev": "nx run-many --target=dev --all --parallel=20",
     "build": "nx run-many --target=build --all",
-    "affected": "nx show projects --affected",
-    "affected:build": "nx affected:build",
-    "publish:prod1": "nx affected --base=origin/production~1 --target=publish:prod --exclude=apps/* --verbose",
-    "changeset": "changeset",
-    "version": "changeset version",
+    "dev": "nx run-many --target=dev --all",
+    "workspace:dev": "cp pnpm-workspace.dev.yaml pnpm-workspace.yaml",
+    "workspace:release": "cp pnpm-workspace.release.yaml pnpm-workspace.yaml",
     "release": "changeset publish"
   },
-  "dependencies": {
-    "axios": "^1.4.0"
-  },
+  "private": true,
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@types/node": "20.4.2",
-    "npm-run-all": "^4.1.5",
-    "nx": "16.5.1",
-    "rimraf": "^5.0.1",
-    "tsup": "^7.1.0",
-    "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "@nx/eslint-plugin": "16.5.3",
+    "@nx/js": "16.5.3",
+    "@nx/linter": "16.5.3",
+    "@nx/vite": "16.5.3",
+    "@nx/workspace": "16.5.3",
+    "@types/node": "18.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "@vitest/coverage-c8": "~0.32.0",
+    "@vitest/ui": "~0.32.0",
+    "eslint": "~8.15.0",
+    "eslint-config-prettier": "8.1.0",
+    "nx": "16.5.3",
+    "prettier": "^2.6.2",
+    "typescript": "~5.1.3",
+    "verdaccio": "^5.0.4",
+    "vite": "~4.3.9",
+    "vite-tsconfig-paths": "~4.2.0",
+    "vitest": "~0.32.0"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }

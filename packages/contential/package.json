@@ -1,38 +1,6 @@
 {
   "name": "contential",
-  "description": "Contential JS",
-  "version": "0.0.25",
-  "license": "MIT",
-  "private": false,
-  "files": [
-    "dist/*"
-  ],
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/*"
-      ]
-    }
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    },
-    "./*.js": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.js"
-    }
-  },
-  "scripts": {
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
-    "clean": "rimraf dist",
-    "build": "npm-run-all clean build:main",
-    "build:main": "tsup",
-    "lint": "eslint \"**/*.ts*\""
-  },
-  "dependencies": {
-    "@contential/chat": "0.0.5",
-    "@contential/prompt": "0.0.15"
-  }
+  "version": "0.0.26",
+  "module": "module",
+  "private": false
 }
