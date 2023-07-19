@@ -39,8 +39,8 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Workspace release file
-        run: pnpm workspace:release
+      # - name: Workspace release file
+      #   run: pnpm workspace:release
 
       - name: Create release pull request or publish
         id: changesets

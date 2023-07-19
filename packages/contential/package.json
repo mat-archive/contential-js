@@ -3,5 +3,30 @@
   "description": "Contential",
   "version": "0.0.28",
   "module": "module",
-  "private": false
+  "private": false,
+  "scripts": {
+    "build": "tsup"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./*.js": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js",
+      "require": "./dist/*.js"
+    }
+  }
 }

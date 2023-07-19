@@ -5,13 +5,9 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "executor": "nx:run-script",
       "options": {
-        "outputPath": "dist/packages/contential",
-        "main": "packages/contential/src/index.ts",
-        "tsConfig": "packages/contential/tsconfig.lib.json",
-        "assets": ["packages/contential/*.md"]
+        "script": "build"
       }
     },
     "publish": {
