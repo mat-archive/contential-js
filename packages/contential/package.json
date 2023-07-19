@@ -1,7 +1,7 @@
 {
   "name": "contential",
   "description": "Contential",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "module": "module",
   "private": false,
   "scripts": {
