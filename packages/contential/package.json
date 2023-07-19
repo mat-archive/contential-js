@@ -2,11 +2,8 @@
   "name": "contential",
   "description": "Contential",
   "version": "0.0.29",
-  "module": "module",
+  "module": "dist/index.js",
   "private": false,
-  "scripts": {
-    "build": "tsup"
-  },
   "files": [
     "dist/*"
   ],
