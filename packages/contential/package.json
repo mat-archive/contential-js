@@ -1,6 +1,6 @@
 {
   "name": "contential",
-  "description": "Contential",
+  "description": "Contential JavaScript Client",
   "version": "0.0.30",
   "module": "dist/index.js",
   "private": false,
