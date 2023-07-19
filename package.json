@@ -5,8 +5,6 @@
   "scripts": {
     "build": "nx run-many --target=build --all",
     "dev": "nx run-many --target=dev --all",
-    "workspace:dev": "cp pnpm-workspace.dev.yaml pnpm-workspace.yaml",
-    "workspace:release": "cp pnpm-workspace.release.yaml pnpm-workspace.yaml",
     "release": "changeset publish"
   },
   "private": true,
@@ -31,6 +29,7 @@
     "typescript": "~5.1.6",
     "verdaccio": "^5.0.4",
     "vite": "~4.3.9",
+    "vite-plugin-dts": "~2.3.0",
     "vite-tsconfig-paths": "~4.2.0",
     "vitest": "~0.32.0"
   },
