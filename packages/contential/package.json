@@ -1,5 +1,6 @@
 {
   "name": "contential",
+  "description": "Contential",
   "version": "0.0.26",
   "module": "module",
   "private": false
